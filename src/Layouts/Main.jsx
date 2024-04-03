@@ -7,12 +7,12 @@ const Main = () => {
     return (
         <div className="min-h-screen">
             <Navbar></Navbar>
-         <div >
+            <div >
 
-         <Outlet></Outlet> 
-         </div>
+                <Outlet></Outlet>
+            </div>
 
-         <Footer></Footer>
+            <Footer></Footer>
         </div>
     );
 };

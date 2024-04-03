@@ -5,9 +5,9 @@ import useAuth from "../../hooks/useAuth";
 const Navbar = () => {
 
     //TODO change after complete authProvider
-   const {user,LogOut}=useAuth()
-    
-    const lgLogo= '/logo.png'
+    const { user, logOut } = useAuth()
+
+    const lgLogo = '/logo.png'
     const logo = '/logo.png'
 
     // console.log(user);
@@ -20,14 +20,14 @@ const Navbar = () => {
                     className={({ isActive, isPending }) =>
                         isPending ? "pending" : isActive ? "activeNav hover:scale-110 opacity-100 duration-300" : " pendingNav hover:scale-110 opacity-95 duration-300"
                     }
-                > 
+                >
                     Home
                 </NavLink>
             </li>
             <li className="mt-2 lg:mt-0">
                 {" "}
                 <NavLink
-                    to="/about"
+                    to="/aboutUs"
                     className={({ isActive, isPending }) =>
                         isPending ? "pending" : isActive ? "activeNav hover:scale-110 opacity-100 duration-300" : " pendingNav hover:scale-110 opacity-95 duration-300"
                     }
@@ -47,8 +47,8 @@ const Navbar = () => {
                     Contact Us
                 </NavLink>
             </li>
-          
-            
+
+
         </>
     );
     return (
@@ -62,14 +62,14 @@ const Navbar = () => {
                 <div className="hidden lg:flex mt-2 " >
                     <Link to='/'>
 
-                      
-                            <img
-                                className="w-[150px] py-8  h-full object-cover "
-                                src={lgLogo}
-                                alt=""
-                            />
-                           
-                        
+
+                        <img
+                            className="w-[150px] py-8  h-full object-cover "
+                            src={lgLogo}
+                            alt=""
+                        />
+
+
 
                     </Link>
 
@@ -113,16 +113,16 @@ const Navbar = () => {
                                     <li>
 
                                         <button className="btn btn-sm my-3 ">
-                                            <Link to='/dashboard' className="">
-                                                Dashboard
+                                            <Link to='/taskManager' className="">
+                                                Task Manager
                                             </Link>
                                         </button>
 
 
                                     </li>
                                     <li>
-                                        <button className="sharedBtn"
-                                            onClick={() => { LogOut() }}
+                                        <button className="logOutBtn"
+                                            onClick={() => { logOut() }}
                                         >
                                             Logout <IoLogOutOutline size={15} className="pl-2" />
                                         </button>
@@ -133,7 +133,7 @@ const Navbar = () => {
                                 :
                                 <Link to='/login'>
                                     <button className="authBtn">
-                                        <span className="mr-1">Login</span> <RiLoginBoxLine  size={15}  />
+                                        <span className="mr-1">Login</span> <RiLoginBoxLine size={15} />
                                     </button>
                                 </Link>
                         }

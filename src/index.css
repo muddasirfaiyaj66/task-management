@@ -69,7 +69,49 @@
 .authBtn:hover:before {
   left: 0;
 }
+/* for logOut  */
+.logOutBtn {
+  width: 100px;
+  height: 40px;
+  background-color: #000;
+  margin-top: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  text-align: center;
+}
 
+.logOutBtn:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #FF0000, #8b0606);
+  transition: all 0.3s ease-in-out;
+  z-index: -1;
+  border-radius: 15px;
+}
+
+.logOutBtn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-size: medium;
+  font-weight: 500;
+}
+
+.logOutBtn:hover:before {
+  left: 0;
+}
 
 
 .btnBig {
@@ -115,6 +157,53 @@
 }
 
 .btnBig:hover:before {
+  left: 0;
+}
+
+
+.sharedBtn {
+  width: auto;
+  padding: 10px 25px;
+  height: auto;
+  background-color: #000;
+  margin-top: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.sharedBtn:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #00AAFF, #2735ff);
+  transition: all 0.3s ease-in-out;
+  z-index: -1;
+  border-radius: 50px;
+}
+
+.sharedBtn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.sharedBtn:hover:before {
   left: 0;
 }
 

@@ -1,12 +1,39 @@
-import { Link } from 'react-router-dom'
-import { FcGoogle } from 'react-icons/fc'
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom'
 import useAuth from '../../hooks/useAuth'
+import SocialLogin from './SocialLogin/SocialLogin'
+import toast from 'react-hot-toast'
 
 
 const Login = () => {
-  const {login}= useAuth()
+  const { login } = useAuth()
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from = location.state?.from?.pathname || '/';
+  const handleLogin = (event) => {
+    event.preventDefault()
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
 
-  
+
+    const data = {
+      email,
+      password
+    }
+    login(email, password)
+      .then(res => {
+        toast.success("Log in successfully!!", { duration: 3000 })
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        toast.error(`Error:${error.message}`, { duration: 3000 })
+      })
+    console.log(data);
+
+  }
+
+
+
   return (
     <div className='flex justify-center items-center min-h-screen'>
       <div className='flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100 text-gray-900'>
@@ -19,6 +46,7 @@ const Login = () => {
         <form
           noValidate=''
           action=''
+          onSubmit={handleLogin}
           className='space-y-6 ng-untouched ng-pristine ng-valid'
         >
           <div className='space-y-4'>
@@ -75,11 +103,12 @@ const Login = () => {
           </p>
           <div className='flex-1 h-px sm:w-16 dark:bg-gray-700'></div>
         </div>
-        <div className='flex justify-center items-center space-x-2 border m-3 p-2 border-gray-300 border-rounded cursor-pointer'>
+        {/* <div className='flex justify-center items-center space-x-2 border m-3 p-2 border-gray-300 border-rounded cursor-pointer'>
           <FcGoogle size={32} />
 
           <p>Continue with Google</p>
-        </div>
+        </div> */}
+        <SocialLogin></SocialLogin>
         <p className='px-6 text-sm text-center text-gray-400'>
           Don&apos;t have an account yet?{' '}
           <Link
