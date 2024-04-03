@@ -14,6 +14,7 @@ Built with a powerful tech stack:
 - Firebase
 - MongoDB
 ## Live link
+live site: [https://task-management-a86fe.web.app/](https://task-management-a86fe.web.app/)
 live site: [https://task-management2024.vercel.app/](https://task-management2024.vercel.app/)
 
 ## Installation
