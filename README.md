@@ -1,4 +1,6 @@
-#Task Management
+# Task Management
+
+
 **A Task Management web application. **
 
 
@@ -11,7 +13,8 @@ Built with a powerful tech stack:
 - Express
 - Firebase
 - MongoDB
-
+## Live link
+live site: [https://task-management2024.vercel.app/](https://task-management2024.vercel.app/)
 
 ## Installation
 
@@ -21,7 +24,7 @@ Built with a powerful tech stack:
 
 1. Clone the repository:
    ```bash
-   git clone [https://github.com/your-username/task-management.git](https://github.com/your-username/task-management.git)
+   git clone [https://github.com/muddasirfaiyaj66/task-management.git](https://github.com/muddasirfaiyaj66/task-management.git)
    ```
 2. Install dependencies:
    ```bash
